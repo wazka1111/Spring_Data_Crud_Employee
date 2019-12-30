@@ -1,0 +1,21 @@
+ Projekt to CRUD dla listy pracowników. Oparty na Spring boot i REST
+
+
+1. Tworzenie projektu:
+https://start.spring.io/
+-dependency:
+web, jpa, devTools, mySQLDriver
+
+2. Tworzenie bazy danych. Sql script jest w projekcie w folderze sql_script
+
+3. Architektura aplikacji:
+
+Employee
+REST
+Controller  ----- Employee service  ---- Employee DAO (Hibernate)  ------ Database mysql
+
+4. Stworzenie klasy Employee - entity
+
+5. Stworzenie DAO - łączenie z bazą danych
+
+6. Stworzenie rest controller
