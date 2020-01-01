@@ -1,6 +1,5 @@
 package com.darek.employee.CRUD_employee.rest;
 
-import com.darek.employee.CRUD_employee.dao.EmployeeDAO;
 import com.darek.employee.CRUD_employee.entity.Employee;
 import com.darek.employee.CRUD_employee.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
