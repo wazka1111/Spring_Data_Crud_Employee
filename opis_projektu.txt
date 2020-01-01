@@ -1,34 +1,16 @@
- Projekt to CRUD dla listy pracowników. Oparty na Spring boot i REST
+Wykorzystanie Spring Data Rest
+1. Dodanie do Pom.xml
+dependency:
+<!-- Spring Data for REST-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
 
+2. Mam entity Employee
 
-1. Tworzenie projektu:
-https://start.spring.io/
--dependency:
-web, jpa, devTools, mySQLDriver
+3. Mam aplikację główną z metodą main
 
-2. Tworzenie bazy danych. Sql script jest w projekcie w folderze sql_script
+4. Mam JPA repository. Wystarczy, że zrobię interfejs, [moje_entity]Repository, które rozszerza, extends JpaRepository<moja_entity, Integer>
 
-3. Architektura aplikacji:
-
-Employee
-REST
-Controller  ----- Employee service  ---- Employee DAO (Hibernate)  ------ Database mysql
-
-4. Stworzenie klasy Employee - entity
-
-5. Stworzenie DAO - łączenie z bazą danych
-
-6. Stworzenie rest controller
-
-7. Dodanie employeeService. Klasa która powtarza metody z employeeDao. Te metody wywołują metody w Dao. Teraz rest cotroller wywołuje bezpośrednio metodę servisu a nie dao. 
-
-8. Do zrobienia są metody restowe
--> GET /{employeeID}
-->POST/employees - dodanie nowego pracownika do bazy
-
-
-9. Kolejne metody to:
--> PUT /employees - update record
--> DELETE /employees/{employeeId} - delete record. 
-
-10. 
+Tutaj mam wszystkie metody crudowe
