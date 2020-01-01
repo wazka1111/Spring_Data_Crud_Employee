@@ -13,4 +13,21 @@ dependency:
 
 4. Mam JPA repository. Wystarczy, że zrobię interfejs, [moje_entity]Repository, które rozszerza, extends JpaRepository<moja_entity, Integer>
 
-Tutaj mam wszystkie metody crudowe
+Tutaj mam wszystkie metody findAll, find, save, delete
+
+5. Dodanie Spring Data REST
+Dodaje metody restowe bez kodowania te podstawowe, GET, POST, PUT, Delete
+
+Spring Data Rest skanuje projekt w poszukiwaniu JPARepository i wystawia Restowe Api dla entity w JPARepository.
+
+6. Forma liczby mnogiej. 
+Jeśli moja entity to Employee, to w endpoicie będzie employees. 
+Doda s na końcu. 
+
+7. Mając Spring Data Rest można wywalić rest controller, i employee service
+
+8. Spring Data stosuje HATEOS
+
+Jest to dodanie metadata (Pages, totalElements, totalPages, number) do jasona w response.
+
+9.  
