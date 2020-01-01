@@ -4,9 +4,7 @@ import com.darek.employee.CRUD_employee.dao.EmployeeDAO;
 import com.darek.employee.CRUD_employee.entity.Employee;
 import com.darek.employee.CRUD_employee.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +24,43 @@ public class EmployeeRestController {
     @GetMapping("/employees")
     public List<Employee> findAll() {
         return employeeService.findAll();
+    }
+
+    //add mapping for GET /employees/{employeeId}
+    @GetMapping("/employees/{employeeId}")
+    public Employee getEmployee(@PathVariable int employeeId) {
+        Employee employee = employeeService.findById(employeeId);
+        if (employee == null) {
+            throw new RuntimeException("Employee id not exist in database: " + employeeId);
+        }
+        return employee;
+    }
+
+    //add mapping for POST - add new employee to database
+    @PostMapping("/employees")
+    public Employee addEmployee(@RequestBody Employee employee) {
+        //set id to 0. Save not update
+        employee.setId(0);
+        employeeService.save(employee);
+        return employee;
+    }
+
+    //add maping for PUT
+    @PutMapping("/employees")
+    public Employee updateEmployee(@RequestBody Employee employee) {
+        employeeService.save(employee);
+        return employee;
+    }
+
+    //add mapping for DELETE
+    @DeleteMapping("/employees/{employeeId}")
+    public String deleteEmployee(@PathVariable int employeeId) {
+        Employee employee = employeeService.findById(employeeId);
+
+        if (employee == null) {
+            throw new RuntimeException("Employee id not found " + employeeId);
+        }
+        employeeService.deleteEmployeeById(employeeId);
+        return "Employee deleted with id: " + employeeId;
     }
 }

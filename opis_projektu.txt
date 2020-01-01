@@ -19,3 +19,16 @@ Controller  ----- Employee service  ---- Employee DAO (Hibernate)  ------ Databa
 5. Stworzenie DAO - łączenie z bazą danych
 
 6. Stworzenie rest controller
+
+7. Dodanie employeeService. Klasa która powtarza metody z employeeDao. Te metody wywołują metody w Dao. Teraz rest cotroller wywołuje bezpośrednio metodę servisu a nie dao. 
+
+8. Do zrobienia są metody restowe
+-> GET /{employeeID}
+->POST/employees - dodanie nowego pracownika do bazy
+
+
+9. Kolejne metody to:
+-> PUT /employees - update record
+-> DELETE /employees/{employeeId} - delete record. 
+
+10. 

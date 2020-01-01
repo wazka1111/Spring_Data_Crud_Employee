@@ -5,7 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import javax.persistence.EntityManager;
 
@@ -54,7 +54,7 @@ public class EmployeeDAOHibernateImpl implements EmployeeDAO {
     @Override
     public void deleteById(int id) {
         Session currentSession = entityManager.unwrap(Session.class);
-        Query query = currentSession.createQuery("drop from Employee where id=:employeeId");
+        Query query = currentSession.createQuery("delete from Employee where id=:employeeId");
         query.setParameter("employeeId", id);
         query.executeUpdate();
     }
