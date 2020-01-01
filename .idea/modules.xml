@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Spring_Data_Crud_Employee.iml" filepath="$PROJECT_DIR$/Spring_Data_Crud_Employee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Employee_REST_application.iml" filepath="$PROJECT_DIR$/.idea/Employee_REST_application.iml" />
     </modules>
   </component>
 </project>
