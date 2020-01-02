@@ -30,4 +30,36 @@ Doda s na końcu.
 
 Jest to dodanie metadata (Pages, totalElements, totalPages, number) do jasona w response.
 
-9.  
+9.  Spring data domyślnie tworzy endpoint na podstawie entity. 
+
+Można w application.config dodać wpis, aby dodać coś do ścieżki podstawej. 
+spring.data.rest.base-path=/api
+
+10. Aby zmienić ścieżkę w endpincie, i przełamać pluralizm, można dodać adnotację
+@RepositoryRestResource(path="members")
+public interface EmployeeRepository extends JpaRepository<Employee, Integer>{}
+
+będzie wtedy 
+localhost://8080/members
+
+11. Sortowanie
+Localhost://8080/employee?sort=lastName
+Localhost://8080/employee?sort=firstName, desc
+
+
+12. Thymeleaf - [tajmlif]
+
+silnik szablonów. 
+Generuje HTML widok.
+Jest to podobne rozwiązanie jak JSP
+
+Żeby tego użyć muszę:
+-> dodać dependency do POM.xml
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+-> Dodać do projektu spring mvc controller
+-> stworzyć themeleaf template
+
+13. 
