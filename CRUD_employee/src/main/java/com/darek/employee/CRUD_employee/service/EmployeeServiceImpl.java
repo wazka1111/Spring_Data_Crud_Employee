@@ -20,7 +20,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<Employee> findAll() {
-        return employeeRepository.findAll();
+        //dodanie metody, która zwraca wszystko posortowane według last name
+        return employeeRepository.findAllByOrderByLastNameAsc();
     }
 
     @Override
