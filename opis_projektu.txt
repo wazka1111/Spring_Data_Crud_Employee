@@ -1,3 +1,7 @@
+projekt to CRUD - manager pracowników. Na GUI opartym na css bootstrap i thymeleaf mam gui, gdzie dodaję, wyświetlam, usuwam i updatuję pracowników. 
+
+Oparte na spring data 
+--------------
 Wykorzystanie Spring Data Rest
 1. Dodanie do Pom.xml
 dependency:
